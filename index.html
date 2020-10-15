@@ -19,11 +19,11 @@
         </section>
 
         <!-- this section needs to be in a loop depending on which pokemon the user chose -->
-        <section id="current-health">
+        <!-- <section id="current-health"> -->
             <h2>What is your pokemon's current health?</h2>
             <!-- health input -->
-            <h3 id="health">1hp</h3>
-            <!-- this area might be a good place to display shinx's initial health? not sure -->
+            <h3 id="health">hp</h3>
+            <!-- this area might be a good place to display shinx's initial health? more likely in display pokemon -->
         </section>
 
         <section id="display-pokemon">
@@ -33,13 +33,19 @@
         </section>
 
         <section id="battle-choice">
-            <!-- add button so user can select attack option -->
-            <button type="button">Attack</button>
+            <select id="move-choice"></select>
+            <!-- add button so user can select attack option later OR have the moves drop down, select one, and then hit attack?-->
+            <!-- <button type="button">Attack</button> -->
             <!-- add different move options with buttons next to each other maybe -->
             <!-- move choice is tied to specific damage that move deals -->
+            <!-- shinx attacks first-->
+
         </section>
 
-        <script src="data.js"></script>
-        <script src="scripts.js"></script>
+        <!-- when one pokemon's hp falls to or below 0, display popup that says you won/lost -->
+        <!-- if shinx hits your pokemon and brings its hp to 0, your pokemon cant attack back-->
+        <!-- give option to return to main screen and try again -->
+
+        <script src="scripts.js" type="module"></script>
     </body>
 </html>

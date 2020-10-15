@@ -15,6 +15,20 @@ const pokemonData = {
         defense: 64,
         //type: grass, resistant to electric, damaged normally by dark.
         //note: sp. attack=45, sp. defense=55, speed=31 (shinx would attack first)
+        "moves": [
+            //normal type move
+            {
+                name: "tackle",
+                damage: 35,
+                //for rand maybe needs 2 or above to hit
+            },
+            //grass type move
+            {
+                name: "razor leaf",
+                damage: 55,
+                //for rand maybe need 6 or above
+            },
+        ]
     },
     "chimchar": {
         maxHp: 44,
@@ -22,6 +36,18 @@ const pokemonData = {
         defense: 44,
         //type: fire, damaged normally by dark and electric
         //note: sp. attack=58, sp. defense=44, speed=61 (chimchar would attack first)
+        "moves": [
+            {
+                //normal type move
+                name: "scratch",
+                damage: 40,
+            },
+            {
+                //fire type move
+                name: "flame wheel",
+                damage: 60,
+            },
+        ]
     },
     "piplup": {
         maxHp: 53,
@@ -29,30 +55,18 @@ const pokemonData = {
         defense: 53,
         //type: water, weak to electric, normal damage dark
         //note: sp. attack=61, sp. defense=56, speed=40 (shinx would attack first)
+        "moves": [
+            {
+                name: "pound",
+                damage: 40,
+            },
+            {
+                name: "bubble beam",
+                damage: 65,
+            },
+        ]
     },
-
-    //figure out how to nest dictionaries, so user selecting pokemon and pokemon moves is separate
-    const moveSet = {
-        "turtwigMoves": {
-            //normal type move
-            "tackle": 35,
-            //grass type move
-            "razor leaf": 55,
-        },
-        "charmanderMoves": {
-            //normal type move
-            "scratch": 40,
-            //fire type move
-            "flame wheel": 60,
-        },
-        "piplupMoves": {
-            //normal type move
-            "pound": 40,
-            //water type move
-            "bubble beam": 65,
-        },
-    },
-},
+}
 //note: could implement STAB, move thats same type as pokemon's type, damage increased by x1.5.
 
-export default(pokemonData)
+export default pokemonData
