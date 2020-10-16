@@ -4,16 +4,31 @@ console.log(pokemonData)
 const pokemonSelect = document.querySelector("#pokemon-select")
 const health = document.querySelector("#health")
 const moveSelect = document.querySelector("#battle-choice")
-
-pokemonSelect.addEventListener('change', updateMoves)
-moveSelect.addEventListener('change', battle)
-
+const attackButton = document.querySelector("#attackTrigger")
 const userMoveSelect = document.getElementById("move-choice")
 
+pokemonSelect.addEventListener('change', updateMoves)
+// moveSelect.addEventListener('change', battle) (could trigger battle instead of button)
+attackButton.addEventListener('click', battle)
+
+// ---------------------------
+const enemy = {
+    name: "shinx",
+    currentHp: 45,
+}
+const user = {
+    
+}
+
+// ---------------------------
 function updateMoves () {
+    console.log("*updateMoves function*")
     //figure out which pokemon is selected
     const userPoke = pokemonSelect.value
     console.log(userPoke)
+    //declaring chosen pokemon with its current hp to keep track of hp during battle
+    user.name = userPoke
+    user.currentHp = pokemonData.pokemon.shinx.maxHp
     //display selected pokemon and retrieve its stats
     const chosenPokemon = pokemonData.pokemon[userPoke]
     console.log(chosenPokemon)
@@ -30,11 +45,14 @@ function updateMoves () {
     }
 }
 updateMoves()
+// ---------------------------
 //random number between 0 and 9 to roll if attack hits or misses for later
 // function getRandomInt(max) {
 //     return Math.floor(Math.random() * Math.floor(max));
 // }
+// --------------------------
 function battle() {
+    console.log("*battle function*")
     //get pokemon
     const userPoke = pokemonSelect.value
     const enemyPokemon = pokemonData.pokemon.shinx
@@ -67,28 +85,41 @@ function battle() {
     //random number from 0 to 9, make battles dynamic 
     // var randNum = (getRandomInt(10));
 
+
+
+    //AFTER USER CLICKS ATTACK THE FIRST TIME ONLY
+    //lock pokemon input, so they can only select the moves for that specific pokemon until the battle ends!!
+
+
+
     // shinx's damage 
-    // const enemyDamage = (enemyPower * enemyAttack / userDefense * 0.5) + 1
-    // console.log(enemyDamage)
+    const enemyDamage = (enemyPower * enemyAttack / userDefense * 0.5) + 1
+    console.log(enemyDamage)
 
     // user pokemon's damage
-    // const userDamage = (userPower * userAttack / enemyDefense * 0.5) + 1
-    // console.log(userDamage)
+    const userDamage = (userPower * userAttack / enemyDefense * 0.5) + 1
+    console.log(userDamage)
 
     // start health at specific pokemon's max health (unless user's chosen pokemon had an input that was less than its max health)
 
     //shinx attacks first
-
-    //calculate user hp, see if shinx attack took user hp to <= 0, if not, go to user
-
-    //if user pokemon hp <= 0, display popup saying "you lost"
-
+    //calculate user hp
+    currentHp -= enemyDamage
+    if (currentHp <= 0) {
+        //stop battle
+        //display popup saying "you lost"
+    } else {
+        //continue battle, user chooses move
+    }
     //user pokemon attacks
 
-    //calculate shinx hp, see if attack put shinx hp to <= 0 if not, go to attack button
-
+    //calculate shinx hp
+    currentEnemyHp -= userDamage
+    if (currentEnemyHp <= 0) {
+        //stop battle
+        //display popup saying "you won"
+    } else {
+        //continue battle
+    }
     //user inputs with an attack button to continue
-
-    //if shinx hp is <= 0, display popup saying "you won"
 }
-battle()
