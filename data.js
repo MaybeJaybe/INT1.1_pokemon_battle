@@ -1,71 +1,83 @@
 const pokemonData = {
-    "shinx": {
-        maxHp: 45,
-        attack: 65,
-        defense: 34,
-        //type: electric, damaged normally by normal, fire, water, grass.
-        //dark type move
-        bite: 60,
-        // another possible move later could be: spark: 65, electric type move
-        //not sure if i'll use these, but note: sp. attack=40, sp. defense=34, speed=45
-    },
-    "turtwig": {
-        maxHp: 55,
-        attack: 68,
-        defense: 64,
-        //type: grass, resistant to electric, damaged normally by dark.
-        //note: sp. attack=45, sp. defense=55, speed=31 (shinx would attack first)
-        "moves": [
-            //normal type move
-            {
-                name: "tackle",
-                damage: 35,
-                //for rand maybe needs 2 or above to hit
+    pokemon: {
+        shinx: {
+            maxHp: 45,
+            attack: 65,
+            defense: 34,
+            moves: ["bite",]
+            //type: electric, damaged normally by normal, fire, water, grass.
+
+            // another possible move later could be: spark: 65, electric type move
+            //not sure if i'll use these, but note: sp. attack=40, sp. defense=34, speed=45
+        },
+        turtwig: {
+            maxHp: 55,
+            attack: 68,
+            defense: 64,
+            moves: ["tackle", "razor leaf",]
+            //type: grass, resistant to electric, damaged normally by dark.
+            //note: sp. attack=45, sp. defense=55, speed=31 (shinx would attack first)
+              
+            //since accuracy is 95, you want the attack to hit so randNum from 0-9 needs to be > 1... right?
+            //for battle function, need chance to hit in here for each move
+        },
+        chimchar: {
+            maxHp: 44,
+            attack: 58,
+            defense: 44,
+            moves: ["scratch", "flame wheel",]
+            //type: fire, damaged normally by dark and electric
+            //note: sp. attack=58, sp. defense=44, speed=61 (chimchar would attack first)
+        },
+        piplup: {
+            maxHp: 53,
+            attack: 51,
+            defense: 53,
+            moves: ["pound", "bubble beam",]
+            //type: water, weak to electric, normal damage dark
+            //note: sp. attack=61, sp. defense=56, speed=40 (shinx would attack first)
+        },
+
+        //for the accuracy, using rand if its 65 accuracy you need 0-6... or 3 or above? idk to hit.
+
+        moves: {
+            //dark type move
+            "bite": {
+                power: 60,
+                accuracy: 100,
             },
-            //grass type move
-            {
-                name: "razor leaf",
-                damage: 55,
-                //for rand maybe need 6 or above
-            },
-        ]
-    },
-    "chimchar": {
-        maxHp: 44,
-        attack: 58,
-        defense: 44,
-        //type: fire, damaged normally by dark and electric
-        //note: sp. attack=58, sp. defense=44, speed=61 (chimchar would attack first)
-        "moves": [
-            {
+            "tackle": {
                 //normal type move
-                name: "scratch",
-                damage: 40,
+                power: 35,
+                accuracy: 100,
             },
-            {
+            "razor leaf": {
+                //grass type move
+                power: 55,
+                accuracy: 65,
+            },
+            "scratch": {
+                //normal type move
+                power: 40,
+                accuracy: 100,
+            },
+            "flame wheel": {
                 //fire type move
-                name: "flame wheel",
-                damage: 60,
+                power: 60,
+                accuracy: 85,
             },
-        ]
-    },
-    "piplup": {
-        maxHp: 53,
-        attack: 51,
-        defense: 53,
-        //type: water, weak to electric, normal damage dark
-        //note: sp. attack=61, sp. defense=56, speed=40 (shinx would attack first)
-        "moves": [
-            {
-                name: "pound",
-                damage: 40,
+            "pound": {
+                //normal type move
+                power: 40,
+                accuracy: 100,
             },
-            {
-                name: "bubble beam",
-                damage: 65,
+            "bubble beam": {
+                //water type move
+                power: 65,
+                accuracy: 75,
             },
-        ]
-    },
+        },
+    }
 }
 //note: could implement STAB, move thats same type as pokemon's type, damage increased by x1.5.
 
