@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Press Start 2P';
+}
+h1 {
+    font-size: 40px;   
+}
+body h2 {
+    font-size: 18 px;
+}
+/* #choose-pokemon {
+} */
+#pokemon-select {
+    width: fit-content;
+    border: 5px;
+    border-style: solid;
+}
+#display-pokemon {
+    width: fit-content;
+    border: 5px;
+    border-style: solid;
+    margin: 0;
+}
+#wild-pokemon {
+    display: flex;
+    justify-content: flex-end;
+}
+#battle-choice {
+    width: fit-content;
+    border: 5px;
+    border-style: solid;
+}

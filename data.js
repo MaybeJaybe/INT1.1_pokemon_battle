@@ -1,6 +1,7 @@
 const pokemonData = {
     pokemon: {
         shinx: {
+            name: "Shinx",
             maxHp: 45,
             attack: 65,
             defense: 34,
@@ -11,6 +12,7 @@ const pokemonData = {
             //not sure if i'll use these, but note: sp. attack=40, sp. defense=34, speed=45
         },
         turtwig: {
+            name: "Turtwig",
             maxHp: 55,
             attack: 68,
             defense: 64,
@@ -22,6 +24,7 @@ const pokemonData = {
             //for battle function, need chance to hit in here for each move
         },
         chimchar: {
+            name: "Chimchar",
             maxHp: 44,
             attack: 58,
             defense: 44,
@@ -30,6 +33,7 @@ const pokemonData = {
             //note: sp. attack=58, sp. defense=44, speed=61 (chimchar would attack first)
         },
         piplup: {
+            name: "Piplup",
             maxHp: 53,
             attack: 51,
             defense: 53,
