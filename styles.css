@@ -4,30 +4,52 @@ body {
     font-family: 'Press Start 2P';
 }
 h1 {
+    display: flex;
+    justify-content: center;
     font-size: 40px;   
 }
 body h2 {
     font-size: 18 px;
 }
-/* #choose-pokemon {
-} */
-#pokemon-select {
-    width: fit-content;
+#background-image {
+    width: 500px;
     border: 5px;
+    border-style: solid;
+    margin: 4em;
+}
+#chose-turtwig, #chose-chimchar, #chose-piplup {
+    display: none;
+}
+body.turtwig #chose-turtwig {
+    display: block;
+    align-self: flex-end;
+    justify-content: flex-start;
+}
+body.chimchar #chose-chimchar {
+    display: block;
+}
+body.piplup #chose-piplup {
+    display: block;
+}
+#pokemon-select {
+    display: flex;
+    width: fit-content;
+    border: 3px;
     border-style: solid;
 }
 #display-pokemon {
-    width: fit-content;
-    border: 5px;
-    border-style: solid;
-    margin: 0;
+    display: flex;
+    /* width: fit-content; */
 }
 #wild-pokemon {
     display: flex;
     justify-content: flex-end;
 }
 #battle-choice {
-    width: fit-content;
+    padding: 1em;
+}
+/* attack trigger does nothing right now... */
+/* #attack-trigger {
     border: 5px;
     border-style: solid;
-}
+} */

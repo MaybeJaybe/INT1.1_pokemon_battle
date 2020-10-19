@@ -26,14 +26,22 @@ let userHp = pokemonData.pokemon[chosenPokemon].maxHp
 // ---------------------------
 function selectPokemon () {
     console.log("*selectPokemon function*")
+    //add pokemon's name as class name to the element
+    //SUPER USEFUL 
+    //removes the pokemon not chosen by the user
+    document.body.classList.remove(chosenPokemon)
+
     //figure out which pokemon is selected
     chosenPokemon = pokemonSelect.value
+    //add sprite of chosen pokemon
+    document.body.classList.add(chosenPokemon)
     //declaring chosen pokemon with its current hp to keep track of hp during battle
     userHp = pokemonData.pokemon[chosenPokemon].maxHp
     //display selected pokemon and retrieve its stats
     enemyHp = pokemonData.pokemon[enemyPokemon].maxHp
 
     const moveList = pokemonData.pokemon[chosenPokemon].moves
+
 
     //add new option to dropdown for each move
     userMoveSelect.innerHTML = ""
@@ -61,6 +69,11 @@ selectPokemon()
 // --------------------------
 function battle() {
     console.log("*battle function*")
+    //is the hp of either player less than 0? 
+    if (enemyHp || userHp < 0) {
+        print("message somebody won/lost")
+        return;
+    }
     //get all enemy pokemon's data
     const enemyAttack = pokemonData.pokemon[enemyPokemon].attack 
     const enemyDefense = pokemonData.pokemon[enemyPokemon].defense
@@ -112,29 +125,17 @@ function battle() {
     //shinx attacks first
     //calculate user hp
 
-    if (userHp <= 0) {
-        //display popup saying "you lost"
-        // break;
-        //stop battle
-    } else {
-        // continue;
-        //continue battle, user chooses move
+
         userHp -= enemyDamage
+        console.log("**********")
         console.log(userHp)
-    }
+
     //user pokemon attacks
 
     //calculate shinx hp
-    if (enemyHp <= 0) {
-        // break;
-        //stop battle
-        //display popup saying "you won"
-    } else {
-        // continue;
-        //continue battle
+
         enemyHp -= userDamage
         console.log(enemyHp)
-    }
 
     //user inputs with an attack button to continue
     //i know this will go even if the battle should be continuing...
