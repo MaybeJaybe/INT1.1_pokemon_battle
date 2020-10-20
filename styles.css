@@ -64,12 +64,20 @@ body.piplup #chose-piplup {
 }
 #move-choice {
     padding: .5em;
-    margin: 0 6em;
+    margin: 0 12em;
     border: 5px;
     border-style: solid;
 }
-.button #attack-trigger{
+.button #attack-trigger {
     padding: .5em;
     border: 5px;
     border-style: solid;
+}
+#battle-result {
+    display: flex;
+    justify-content: center;
+    border: 5px;
+    border-style: solid;
+    padding: 1em;
+    margin: 2em;
 }

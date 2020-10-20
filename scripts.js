@@ -10,8 +10,9 @@ const userMoveSelect = document.getElementById("move-choice")
 pokemonSelect.addEventListener('change', selectPokemon)
 attackButton.addEventListener('click', battle)
 
-const againButton = document.createElement("button")
-
+// const youWin = 
+// let battleResult = document.getElementById("battle-result")
+// const againButton = document.createElement("button")
 
 // ---------------------------
 console.log("outside declarations")
@@ -71,7 +72,6 @@ function battle() {
     console.log("*battle function*")
     //is the hp of either player less than 0? 
     if (enemyHp || userHp < 0) {
-        print("message somebody won/lost")
         return;
     }
     //get all enemy pokemon's data
@@ -124,8 +124,6 @@ function battle() {
 
     //shinx attacks first
     //calculate user hp
-
-
         userHp -= enemyDamage
         console.log("**********")
         console.log(userHp)
@@ -142,3 +140,9 @@ function battle() {
     againButton.innerHTML = "Try again?"
     //somethingsomethingDiv.appendChild(againButton);
 }
+// if youWin == true {
+//     battleResult.innerHTML = "You Win!"
+// }
+// else {
+//     battleResult.innerHTML = "You Lose"
+// }
